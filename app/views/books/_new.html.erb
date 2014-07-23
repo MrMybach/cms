@@ -1,0 +1,37 @@
+<h1>Dodaj książkę</h1>
+
+
+<%= form_for(:book, :action => 'create') do |f| %>
+<table>
+	<tr>
+		<th><%= f.label('Tytuł') %></th>
+		<td><%= f.text_field(:title, :placeholder => "Tytuł") %></td>
+	</tr>
+	<tr>
+		<th><%= f.label('Autor') %></th>
+		<td><%= f.text_field(:author, :placeholder => "Autor") %></td>
+	</tr>
+	<tr>
+		<th><%= f.label('Rok') %></th>
+		<td><%= f.text_field(:year, :placeholder => "Rok") %></td>
+	</tr>
+	<tr>
+		<th><%= f.label('Kategoria') %></th>
+		<td><%= f.text_field(:category, :placeholder => "Kategoria") %></td>
+	</tr>
+	<tr>
+		<th><%= f.label('Seria') %></th>
+		<td><%= f.text_field(:series_name, :placeholder => "Seria") %></td>
+	</tr>
+	<tr>
+		<th><%= f.label('Ilość stron') %></th>
+		<td><%= f.text_field(:pages, :placeholder => "Ilość stron") %></td>
+	</tr>
+	<tr>
+		<th><%= f.label('Język') %></th>
+		<td><%= f.text_field(:language, :placeholder => "Język") %></td>
+	</tr>
+	
+</table>
+<%= submit_tag("Dodaj", :class => 'button') %>
+<% end %>

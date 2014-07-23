@@ -1,0 +1,32 @@
+<h1>Books</h1>
+<div class="wrapper">
+<%= link_to("Dodaj książkę", :action => 'new') %>
+
+	<div class="books">
+		<% @books.each do |b| %>
+		<div class="book">
+			<ul>
+				<li><%= b.title.titleize %></li>
+				<li><%= b.author.titleize %></li>
+				<li><%= b.year %></li>
+				<% if b.category %>
+					<li><%= b.category %></li>
+				<% end %>
+				<% if b.series_name %>
+					<li><%= b.series_name %></li>
+				<% end %>
+				<% if b.pages %>
+					<li><%= b.pages %></li>
+				<% end %>
+				<% if b.language %>
+					<li><%= b.language %></li>
+				<% end %>
+				<li><% if b.read %>Przeczytana<% else %>Nieprzeczytana <% end %></li>
+			</ul>
+			<div class="buttons-group">
+			<%= link_to("Usuń książkę", :action => 'delete') %>
+			</div>
+		</div>
+		<% end %>
+	</div>
+</div>

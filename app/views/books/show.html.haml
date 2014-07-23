@@ -1,0 +1,19 @@
+%h1 Book show.html
+.book
+	%ul
+		%li= @book.title.titleize
+		%li= @book.author.titleize
+		%li= @book.year
+		- if @book.category
+			%li= @book.category
+		- if @book.series_name
+			%li= @book.series_name
+		- if @book.pages
+			%li= @book.pages
+		- if @book.language
+			%li= @book.language
+		%li
+			- if @book.read 
+				Przeczytana
+			- else 
+				Nieprzeczytana

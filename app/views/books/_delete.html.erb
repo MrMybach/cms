@@ -1,0 +1,6 @@
+<h1>Usuwanie</h1>
+<%= form_for(:book, :url => {:action => 'destroy', :id => @book.id}) do |b| %>
+
+	<p>Czy napewno chcesz usunąć tą pozycję?</p>
+	<%= submit_tag("Usuń książkę") %>
+<% end %>

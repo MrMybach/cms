@@ -1,0 +1,5 @@
+%h1 Usuwanie
+
+= form_for :book, :url => {:action => 'destroy', :id => @book.id} do |f|
+	%p Czy napewno chcesz usunąć tą pozycję?
+	= submit_tag "Usuń książkę"

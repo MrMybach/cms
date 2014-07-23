@@ -1,0 +1,25 @@
+%h1 Books
+.wrapper
+  = link_to("Dodaj książkę", :action => 'new')
+  .books
+    - @books.each do |b|
+      .book
+        %ul
+          %li= b.title.titleize
+          %li= b.author.titleize
+          %li= b.year
+          - if b.category
+            %li= b.category
+          - if b.series_name
+            %li= b.series_name
+          - if b.pages
+            %li= b.pages
+          - if b.language
+            %li= b.language
+          %li
+            - if b.read
+              Przeczytana
+            - else
+              Nieprzeczytana
+        .buttons-group
+          = link_to("Usuń", {:action => 'delete', :id => b.id})

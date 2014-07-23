@@ -1,0 +1,29 @@
+%h1 Dodaj książkę
+
+= form_for(:book, :url=> {:action => 'create'}) do |f|
+  %table
+    %tr
+      %th= f.label('Tytuł')
+      %td= f.text_field(:title, :placeholder => "Tytuł")
+    %tr
+      %th= f.label('Autor')
+      %td= f.text_field(:author, :placeholder => "Autor")
+    %tr
+      %th= f.label('Rok')
+      %td= f.text_field(:year, :placeholder => "Rok")
+    %tr
+      %th= f.label('Kategoria')
+      %td= f.text_field(:category, :placeholder => "Kategoria")
+    %tr
+      %th= f.label('Seria')
+      %td= f.text_field(:series_name, :placeholder => "Seria")
+    %tr
+      %th= f.label('Ilość stron')
+      %td= f.text_field(:pages, :placeholder => "Ilość stron")
+    %tr
+      %th= f.label('Język')
+      %td= f.text_field(:language, :placeholder => "Język")
+    %tr
+      %th= f.label('Przeczytana?')
+      %td= f.check_box(:read, :checked => true)
+  = submit_tag("Dodaj", :class => 'button')

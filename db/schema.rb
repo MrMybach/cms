@@ -11,9 +11,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20140714122634) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "books", force: true do |t|
+    t.string   "title"
+    t.string   "author"
+    t.string   "year"
+    t.string   "category"
+    t.string   "series_name"
+    t.string   "pages"
+    t.string   "language"
+    t.boolean  "read",        default: false
+    t.string   "cover"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", force: true do |t|
+    t.string   "first_name",      limit: 20
+    t.string   "last_name",       limit: 50
+    t.string   "email",           limit: 50, default: "", null: false
+    t.string   "username",        limit: 25
+    t.string   "hashed_password", limit: 50
+    t.boolean  "active"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "users", ["username"], name: "index_users_on_username", using: :btree
 
 end
